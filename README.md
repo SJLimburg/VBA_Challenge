@@ -13,4 +13,4 @@ The checker sets the percent change to zero. There may be other ways to report t
 in this dataset the daily values were zeroes and in reality no stock opens with a zero opening price.
 If this were a production report that data set would have been flagged to send to an error bucket for futher evaluation.
 
-For each of the 3 years the stocks with the greatest percentage increase, greatest percentage decrease and greastest total volume of trades was reported along with the values.
+For each of the 3 years the stocks with the greatest percentage increase, greatest percentage decrease and greatest total volume of trades was reported along with the values.
