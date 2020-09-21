@@ -1,7 +1,7 @@
 # VBA_Challenge
 VBA homework for GT BC Data Science - Shirley Limburg
 
-This Stock Report Summarizes daily stock data for eac h year of 2014, 2015 1nd 2016
+This Stock Report Summarizes daily stock data for each year of 2014, 2015 and 2016
 
 This VBA scxript requires that the data be sorted specifically by Ticker symbol and date of the stock metrics.
 As such the script assumes the first row of data for each ticker is the opening day.
