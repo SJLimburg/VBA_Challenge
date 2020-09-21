@@ -1,7 +1,8 @@
 Option Explicit
 
 Sub VBAHomework()
-'Set-up to loopthrough every worksheet in workbook
+'Loop through StockReport Sub on every worksheet in workbook
+'You only need to run this Sub - it calls the StockReport Sub
 Dim wbk As Workbook
 Dim wks As Worksheet
 Set wbk = ThisWorkbook
@@ -12,7 +13,7 @@ Set wbk = ThisWorkbook
     Next wks
 End Sub
 
-
+'--------------Separator----------------------------------------------
 
 Sub StockReport()
 
@@ -76,7 +77,6 @@ Set wbk = ThisWorkbook
                 If Ticker <> PrevTicker Then
                 
                     YearOpenPrice = Cells(CurrentRow, 3).Value
-                    'Debug.Print ("YearOpenPrice is " & YearOpenPrice)
                     
                 End If
             
@@ -128,21 +128,17 @@ Set wbk = ThisWorkbook
             'Cells(ReportRow, 11).Interior.ColorIndex = 3
             
             Cells(ReportRow, 11).Style = "Bad"
-                   
             
             End If
-        
         
         'Increment row for reporting the data
         ReportRow = ReportRow + 1
     
         'Reset TradeVol to zero for next ticker
         TradeVol = 0
-            
-                  
+                      
         End If
-        
-           
+            
     Next CurrentRow
     
     'Use the loop to record ticker and values for the challenge
@@ -168,6 +164,7 @@ Set wbk = ThisWorkbook
     
     Dim CR As LongLong
     
+    'Compare each ticker to the values stored to find the desired metric
     
     For CR = 3 To ReportRow
     
@@ -185,8 +182,7 @@ Set wbk = ThisWorkbook
         MostVolume = Cells(CR, 13).Value
         MostVolTicker = Cells(CR, 10).Value
         End If
-        
-        
+         
     Next CR
     
     'Record the values from the loop into the table
@@ -194,13 +190,10 @@ Set wbk = ThisWorkbook
     Cells(2, 18).Value = FormatPercent(BestPctInc)
     Cells(3, 17).Value = WorstTicker
     Cells(3, 18).Value = FormatPercent(WorstPctInc)
-    
     Cells(4, 17).Value = MostVolTicker
     Cells(4, 18).Value = MostVolume
     
-'AutoFit the columns to make them look better
-
-Range("J:M").EntireColumn.AutoFit
-Range("P:R").EntireColumn.AutoFit
+'AutoFit Stock Report columns to make them look better
+Range("J:R").EntireColumn.AutoFit
 
 End Sub
